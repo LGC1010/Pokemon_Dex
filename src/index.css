@@ -1,0 +1,106 @@
+.content_box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: cornflowerblue;
+}
+
+.btn_home{
+  position: fixed;
+  top: 15px;
+  left: 10px;
+  width: 100px;
+  padding: 10px;
+  background-color: black;
+  color: #fff;
+}
+.btn_dex{
+  width: 240px;
+  padding: 20px 15px;
+  box-sizing: border-box;
+  background: red;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+.btn_add,
+.btn_del{
+  box-sizing: border-box;
+  width: 80px;
+  background: red;
+  color: #fff;
+  font-weight: 700;
+}
+
+.inner_box{
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.content{
+  margin: 30px 0;
+  padding: 40px;
+  box-sizing: border-box;
+  background: skyblue;
+  border-radius: 10px;
+}
+.content .title{
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.dash_poketmon_list{
+  margin-top: 20px;
+  display: flex;
+}
+.dash_poketmon_list .dash_poketmon_item{
+  background: #fff;
+  margin-right: 40px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  width: 20%;
+}
+
+.poketmon_list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.poketmon_list .poketmon_item{
+  width: calc(14.285% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  padding: 15px 0 30px;
+  background: #fff;
+  margin: 0 20px 20px 0;
+  border-radius: 15px;
+}
+.poketmon_item img{
+  width: 100%;
+  object-fit: cover;
+}
+.poketmon_item .text_box{
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+.poketmon_item .text_box strong{
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+.poketmon_item .text_box span{
+  font-size: 14px;
+  text-align: center;
+}
