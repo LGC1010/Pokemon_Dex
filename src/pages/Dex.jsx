@@ -12,8 +12,12 @@ const Dex = () => {
     const newPoketMonList = MOCK_DATA.find((lists) => {
       return lists.id == pokemon.id;
     });
-    setSelectedPokemon([...selectedPokemon, newPoketMonList])
-    console.log(newPoketMonList);
+    if(selectedPokemon.length<6){
+      setSelectedPokemon([...selectedPokemon, newPoketMonList])
+    }else{
+      alert('최대 6개까지 선택 가능합니다')
+    }
+    console.log(selectedPokemon);
   }
 
   const removePokemon = function(pokemon){

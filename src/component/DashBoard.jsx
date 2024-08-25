@@ -2,7 +2,6 @@ import React from "react";
 import MOCK_DATA from "../mock";
 
 const Dashboard = ({ selectedPokemon, onRemovePokemon }) => {
-  console.log(selectedPokemon);
   return (
     <div className="content">
       <h1 className="title">나만의 포켓몬</h1>
