@@ -27,6 +27,8 @@
 }
 .btn_add,
 .btn_del{
+  position: relative;
+  z-index: 999;
   box-sizing: border-box;
   width: 80px;
   background: red;
@@ -75,15 +77,27 @@
   flex-wrap: wrap;
 }
 .poketmon_list .poketmon_item{
+  position: relative;
   width: calc(14.285% - 20px);
   display: flex;
   flex-direction: column;
   justify-self: center;
   align-items: center;
-  padding: 15px 0 30px;
   background: #fff;
   margin: 0 20px 20px 0;
   border-radius: 15px;
+  text-align: center;
+}
+.poketmon_list .poketmon_item a{
+  padding: 15px 0 40px;
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.poketmon_list .poketmon_item .btn_add{
+  position: absolute;
+  bottom: 15px;
 }
 .poketmon_item img{
   width: 100%;

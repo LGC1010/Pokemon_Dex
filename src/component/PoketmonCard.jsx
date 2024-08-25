@@ -11,8 +11,8 @@ const PoketmonCard = ({ mokaData, onAddPokemon}) => {
           <strong>{mokaData.korean_name}</strong>
           <span>No. {mokaData.id}</span>
         </div>
-        <button className="btn_add" onClick={() => {onAddPokemon(mokaData);}}>추가</button>
       </Link>
+      <button className="btn_add" onClick={() => {onAddPokemon(mokaData);}}>추가</button>
     </li>
   );
 };
