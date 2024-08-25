@@ -5,7 +5,7 @@ const PoketmonCard = ({ mokaData, onAddPokemon}) => {
 
   return (
     <li className="poketmon_item">
-      <Link to={`/pokemon-detail?id=${mokaData.id}`}>
+      <Link to={`${mokaData.id}`}>
         <img src={mokaData.img_url} alt={mokaData.korean_name} />
         <div className="text_box">
           <strong>{mokaData.korean_name}</strong>
