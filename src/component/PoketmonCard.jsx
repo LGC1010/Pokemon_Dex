@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { PoketmonContext } from "../context/poketmonContext";
 
-const PoketmonCard = ({ mokaData, onAddPokemon}) => {
+const PoketmonCard = ({ mokaData, addPokemon}) => {
+
+  const data = useContext(PoketmonContext);
+
+  console.log(data)
 
   return (
     <li className="poketmon_item">
@@ -12,7 +17,7 @@ const PoketmonCard = ({ mokaData, onAddPokemon}) => {
           <span>No. {mokaData.id}</span>
         </div>
       </Link>
-      <button className="btn_add" onClick={() => {onAddPokemon(mokaData);}}>추가</button>
+      <button className="btn_add" onClick={() => {data.addPokemon(mokaData);}}>추가</button>
     </li>
   );
 };

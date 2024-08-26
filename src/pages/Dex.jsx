@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Dashboard from "../component/Dashboard";
 import PokemonList from "../component/PoketmonList";
 import MOCK_DATA from "../mock";
+import { PoketmonContext } from "../context/poketmonContext";
 
 const Dex = () => {
   const [selectedPokemon, setSelectedPokemon] = useState([]);
@@ -35,8 +36,12 @@ const Dex = () => {
 
   return (
     <div className="inner_box">
-      <Dashboard selectedPokemon={selectedPokemon} onRemovePokemon={removePokemon}/>
-      <PokemonList pokemonList={MOCK_DATA} onAddPokemon={addPokemon} />
+      <PoketmonContext.Provider value={{addPokemon, removePokemon, selectedPokemon, setSelectedPokemon, MOCK_DATA}}>
+        <Dashboard/>
+        <PokemonList/>
+      </PoketmonContext.Provider>
+      {/* <Dashboard selectedPokemon={selectedPokemon} onRemovePokemon={removePokemon}/>
+      <PokemonList pokemonList={MOCK_DATA} onAddPokemon={addPokemon} /> */}
       <button className="btn_home" onClick={() => {navigate("/");}}>홈으로이동</button>
     </div>
   );

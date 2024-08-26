@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PoketmonCard from './PoketmonCard'
+import { PoketmonContext } from '../context/poketmonContext';
 
-const poketmonList = ({pokemonList, onAddPokemon}) => {
-  
+const poketmonList = ({MOCK_DATA}) => {
+
+  const data = useContext(PoketmonContext)
+
   return (
     <div className="content">
       <ul className="poketmon_list">
-        {pokemonList.map((mokaData) => {
-          return <PoketmonCard key={mokaData.id} pokemonList={pokemonList} mokaData={mokaData} onAddPokemon={onAddPokemon} />;
+        {data.MOCK_DATA.map((mokaData) => {
+          return <PoketmonCard key={mokaData.id} mokaData={mokaData}/>;
         })}
       </ul>
     </div>
