@@ -1,12 +1,9 @@
-.content_box{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: cornflowerblue;
+.logo{
+  width: 800px;
+  height: 400px;
+  background: url(assets/pokemon-logo.png) center no-repeat ;
+  background-size: contain;
 }
-
 .btn_home{
   position: fixed;
   top: 15px;
@@ -34,34 +31,56 @@
   background: red;
   color: #fff;
   font-weight: 700;
+  padding: 5px 10px ;
 }
-
 .inner_box{
   max-width: 1280px;
   margin: 0 auto;
 }
-
-.content{
-  margin: 30px 0;
-  padding: 40px;
+.content_box{
+  text-align: center;
+  background: #fff;
+  padding: 80px 10px;
+  width: 230px;
   box-sizing: border-box;
-  background: skyblue;
   border-radius: 10px;
 }
-.content .title{
-  font-size: 20px;
+.content_box p{
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.content_box p + p{
+  font-weight: 500;
+  font-size: 14px;
+}
+.content_box .btn_back{
+  width: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  background: red;
+  border: none;
   color: #fff;
+}
+.no_data{
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+}
+.title{
+  margin-bottom: 30px;
+  font-size: 34px;
+  color: #222;
   text-align: center;
   font-weight: 700;
 }
-
 .dash_poketmon_list{
   margin-top: 20px;
   display: flex;
+  justify-content: center;
 }
 .dash_poketmon_list .dash_poketmon_item{
   background: #fff;
-  margin-right: 40px;
   box-sizing: border-box;
   border-radius: 5px;
   padding: 20px;
@@ -70,15 +89,21 @@
   justify-self: center;
   align-items: center;
   width: 20%;
+  max-width: 150px;
 }
-
+.dash_poketmon_list .dash_poketmon_item + .dash_poketmon_item{
+  margin-left: 40px;
+}
+.dash_poketmon_list .text_box{
+  margin-bottom: 20px;
+}
 .poketmon_list{
   display: flex;
   flex-wrap: wrap;
 }
 .poketmon_list .poketmon_item{
   position: relative;
-  width: calc(14.285% - 20px);
+  width: calc(14.285% - 22px);
   display: flex;
   flex-direction: column;
   justify-self: center;
@@ -87,6 +112,8 @@
   margin: 0 20px 20px 0;
   border-radius: 15px;
   text-align: center;
+  transition: transform 0.35s;
+  border: 1px solid #222;
 }
 .poketmon_list .poketmon_item a{
   padding: 15px 0 40px;
@@ -94,6 +121,10 @@
   display: block;
   position: relative;
   z-index: 1;
+}
+.poketmon_list .poketmon_item:hover{
+  transform: scale(1.05);
+  transition: transform 0.35s;
 }
 .poketmon_list .poketmon_item .btn_add{
   position: absolute;
@@ -103,18 +134,21 @@
   width: 100%;
   object-fit: cover;
 }
-.poketmon_item .text_box{
+.poketmon_item .text_box,
+.dash_poketmon_item .text_box{
   margin-bottom: 10px;
   font-size: 16px;
   text-align: center;
 }
-.poketmon_item .text_box strong{
+.poketmon_item .text_box strong,
+.dash_poketmon_item .text_box strong{
   font-size: 18px;
   font-weight: 700;
   display: block;
   margin-bottom: 10px;
 }
-.poketmon_item .text_box span{
+.poketmon_item .text_box span,
+.dash_poketmon_item .text_box span{
   font-size: 14px;
   text-align: center;
 }

@@ -3,7 +3,13 @@ import { useNavigate } from "react-router-dom";
 import Dashboard from "../component/Dashboard";
 import PokemonList from "../component/PoketmonList";
 import MOCK_DATA from "../mock";
+import styled from "styled-components";
 import { PoketmonContext } from "../context/poketmonContext";
+
+const InnerBox = styled.div`
+  max-width: 1280px;
+  margin: 0 auto;
+`
 
 const Dex = () => {
   const [selectedPokemon, setSelectedPokemon] = useState([]);
@@ -15,7 +21,7 @@ const Dex = () => {
     const overLap = selectedPokemon.some((list) => {
       return list.id == pokemon.id;
     });
-    if (overLap == true) {
+    if (overLap) {
       alert("이미 포켓몬이 있어요");
     } else if (selectedPokemon.length < 6) {
       setSelectedPokemon([...selectedPokemon, newPoketMonList]);
@@ -28,22 +34,19 @@ const Dex = () => {
     const removePoketMonList = selectedPokemon.filter((item) => {
       return item.id !== pokemon.id;
     });
-    console.log(removePoketMonList);
     setSelectedPokemon(removePoketMonList);
   };
 
   const navigate = useNavigate();
 
   return (
-    <div className="inner_box">
+    <InnerBox>
       <PoketmonContext.Provider value={{addPokemon, removePokemon, selectedPokemon, setSelectedPokemon, MOCK_DATA}}>
         <Dashboard/>
         <PokemonList/>
       </PoketmonContext.Provider>
-      {/* <Dashboard selectedPokemon={selectedPokemon} onRemovePokemon={removePokemon}/>
-      <PokemonList pokemonList={MOCK_DATA} onAddPokemon={addPokemon} /> */}
       <button className="btn_home" onClick={() => {navigate("/");}}>홈으로이동</button>
-    </div>
+    </InnerBox>
   );
 };
 

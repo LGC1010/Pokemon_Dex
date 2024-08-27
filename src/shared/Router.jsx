@@ -8,8 +8,8 @@ const Router = () => {
     <BrowserRouter>
         <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path="/Dex/:id" element={<Detail/>}/>
             <Route path="/Dex" element={<Dex/>}/>
+            <Route path="/pokemon-detail" element={<Detail/>}/>
         </Routes>
     </BrowserRouter>
   )

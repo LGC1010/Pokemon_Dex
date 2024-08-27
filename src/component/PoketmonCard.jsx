@@ -2,15 +2,13 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { PoketmonContext } from "../context/poketmonContext";
 
-const PoketmonCard = ({ mokaData, addPokemon}) => {
+const PoketmonCard = ({ mokaData}) => {
 
   const data = useContext(PoketmonContext);
 
-  console.log(data)
-
   return (
     <li className="poketmon_item">
-      <Link to={`${mokaData.id}`}>
+      <Link to={`/pokemon-detail?id=${mokaData.id}`}>
         <img src={mokaData.img_url} alt={mokaData.korean_name} />
         <div className="text_box">
           <strong>{mokaData.korean_name}</strong>
